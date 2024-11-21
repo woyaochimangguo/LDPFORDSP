@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="592ec8c7-8578-46b9-8bb3-c41d07460665" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/Our_algorithm.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ReadGraph.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseline_1_GreedyPeeling_withoutDP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseline_2_GreedyPeeling_UnderDP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseline_3_LDP.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/baseline_4_LDP2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook.tar.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/0.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/0.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/0.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/0.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/0.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/107.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/107.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/107.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/107.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/107.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1684.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1684.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1684.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1684.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1684.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1912.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1912.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1912.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1912.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/1912.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3437.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3437.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3437.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3437.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3437.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/348.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/348.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/348.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/348.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/348.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3980.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3980.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3980.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3980.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/3980.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/414.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/414.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/414.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/414.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/414.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/686.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/686.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/686.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/686.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/686.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/698.circles" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/698.edges" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/698.egofeat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/698.feat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook/698.featnames" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook_combined.txt.gz" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/Facebook/facebook_combined.txt/facebook_combined.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB.mtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_ActorBacon.mtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_KevinBacon.mtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_MovieBacon.mtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_category.mtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_code.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_colname.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/IMDB_year.mtx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/deg.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/datasets/IMDB/edges.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/measurements.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "woyaochimangguo"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/woyaochimangguo/LDPFORDSP.git",
+    "accountId": "fc97f930-c920-413b-9db3-0e25d8461629"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2p0bgN08lpYpBYqS4XtepohdGGQ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.baseline_3_LDP.executor": "Run",
+    "Python.baseline_4_LDP2.executor": "Run",
+    "Python.run.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/teco/Documents/GitHub/LDPFORDSP",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.run">
+    <configuration name="baseline_3_LDP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LDPFORDSP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baseline_3_LDP.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="baseline_4_LDP2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LDPFORDSP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/baseline_4_LDP2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LDPFORDSP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.run" />
+        <item itemvalue="Python.baseline_4_LDP2" />
+        <item itemvalue="Python.baseline_3_LDP" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PY-241.17890.14" />
+        <option value="bundled-python-sdk-5b207ade9991-7e9c3bbb6e34-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.17890.14" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="592ec8c7-8578-46b9-8bb3-c41d07460665" name="更改" comment="" />
+      <created>1731906050560</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731906050560</updated>
+      <workItem from="1731906052079" duration="25641000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/run.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/LDPFORDSP$baseline_3_LDP.coverage" NAME="baseline_3_LDP 覆盖结果" MODIFIED="1732162809874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LDPFORDSP$baseline_4_LDP2.coverage" NAME="baseline_4_LDP2 覆盖结果" MODIFIED="1732162913465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LDPFORDSP$run.coverage" NAME="run 覆盖结果" MODIFIED="1732171509445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
