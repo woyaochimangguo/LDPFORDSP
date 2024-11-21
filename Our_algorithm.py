@@ -36,9 +36,21 @@ def ldp_charikar_peeling(g, epsilon):
 
     # 进行第二次翻转
     ldp_protected_matrix = add_dp_noise_to_sparse_matrix(dp_protected_matrix, epsilon)
-
+    ldp_protected_matrix = ldp_protected_matrix.tocoo()
     # 生成翻转以后的噪声图
-    ldp_noisy_graph = nx.from_scipy_sparse_array(ldp_protected_matrix)
+    # 生成噪声图，保留原始节点标记
+    ldp_noisy_graph = nx.Graph()
+
+    # 获取原图节点的顺序，用于映射稀疏矩阵索引
+    node_mapping = list(g.nodes)
+
+    # 遍历加噪后的稀疏矩阵并添加边，同时保留原始节点标记
+    for u, v, d in zip(ldp_protected_matrix.row, ldp_protected_matrix.col, ldp_protected_matrix.data):
+        if d > 0:  # 仅保留权重大于 0 的边
+            original_u = node_mapping[u]
+            original_v = node_mapping[v]
+            ldp_noisy_graph.add_edge(original_u, original_v)
+    #ldp_noisy_graph = nx.from_scipy_sparse_array(ldp_protected_matrix)
 
     dense_subgraph, density = charikar_peeling(ldp_noisy_graph)
     return  dense_subgraph,density

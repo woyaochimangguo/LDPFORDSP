@@ -8,7 +8,8 @@ def SEQDENSEDP(graph, epsilon, delta):
 
     # Iteratively remove nodes with probability proportional to their degree using Exponential Mechanism
     for t in range(n):
-        degrees = {v: len(list(graph.neighbors(v))) for v in S}
+        current_subgraph = graph.subgraph(S)
+        degrees = {v: len(list(current_subgraph.neighbors(v))) for v in S}
         # Use the exponential mechanism to choose a node with probability proportional to exp(-epsilon_prime * degree)
         scores = np.array([-degrees[v] for v in S])  # Here we use negative degree as score (lower is better)
         probabilities = np.exp(epsilon_prime * scores)
@@ -31,7 +32,7 @@ def SEQDENSEDP(graph, epsilon, delta):
     # Select the index of a subgraph from the candidate subgraphs with probability proportional to e^(epsilon * density / 2)
     selected_index = np.random.choice([i for i, _ in subgraph_densities], p=probabilities)
     best_subgraph = graph.subgraph(candidate_subgraphs[selected_index])
-    density = len(list(best_subgraph.edges))/len((best_subgraph.nodes))
+    density = len(list(best_subgraph.edges))/max(len((best_subgraph.nodes)),1)
 
     # Return the selected subgraph (as a graph object)
     return graph.subgraph(candidate_subgraphs[selected_index]),density

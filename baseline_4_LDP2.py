@@ -1,7 +1,9 @@
 import numpy as np
 import random
 import networkx as nx
-
+#paper Differential Privacy from Locally Adjustable Graph Algorithms:
+#k-Core Decomposition, Low Out-Degree Ordering, and Densest
+#Subgraphs
 # 几何噪声生成函数
 def geometric_noise(epsilon):
     """生成对称几何噪声"""
