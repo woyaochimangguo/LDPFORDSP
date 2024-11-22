@@ -50,13 +50,11 @@ def ledp_densest_subgraph(adj_list, epsilon, eta):
         current_edges = sum(len(adj_list[node]) for node in current_subgraph) / 2
         current_density = current_edges / max(1, len(current_subgraph))
 
-        # 打印当前轮次信息
-        print(f"轮次 {i+1}/{max_iterations}: 阈值 z = {z:.4f}, 子图密度 = {current_density:.4f}, 子图节点数 = {len(current_subgraph)}")
-
         # 更新最优子图和密度
         if current_density > max_density:
             max_density = current_density
             best_subgraph = current_subgraph
+
 
     return best_subgraph, max_density
 

@@ -32,10 +32,10 @@ def ldp_charikar_peeling(g, epsilon):
     sparse_adj_matrix = nx.to_scipy_sparse_array(g, format='coo')
 
     # 进行第一次翻转
-    dp_protected_matrix = add_dp_noise_to_sparse_matrix(sparse_adj_matrix, epsilon)
+    dp_protected_matrix = add_dp_noise_to_sparse_matrix(sparse_adj_matrix, 0.5*epsilon)
 
     # 进行第二次翻转
-    ldp_protected_matrix = add_dp_noise_to_sparse_matrix(dp_protected_matrix, epsilon)
+    ldp_protected_matrix = add_dp_noise_to_sparse_matrix(dp_protected_matrix, 0.5*epsilon)
     ldp_protected_matrix = ldp_protected_matrix.tocoo()
     # 生成翻转以后的噪声图
     # 生成噪声图，保留原始节点标记

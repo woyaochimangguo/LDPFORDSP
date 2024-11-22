@@ -1,3 +1,4 @@
+import networkx as nx
 def jaccard_similarity(set1, set2):
     #计算两个集合的Jaccard相似度指数
     # 计算两个集合的交集
@@ -10,11 +11,26 @@ def jaccard_similarity(set1, set2):
     return intersection / union
 
 def compare_subgraph_similarity(subgraph1, subgraph2):
-    #比较两个NetworkX子图的相似度
-    # 将子图的节点集合转换为集合类型
-    nodes_set1 = set(subgraph1.nodes())
-    nodes_set2 = set(subgraph2.nodes())
+    """
+    计算两个子图的 Jaccard 相似度
+    :param subgraph1: 第一个子图（集合或 NetworkX 图）
+    :param subgraph2: 第二个子图（集合或 NetworkX 图）
+    :return: Jaccard 相似度
+    """
+    # 确保处理的是集合
+    if isinstance(subgraph1, nx.Graph):
+        nodes_set1 = set(subgraph1.nodes())
+    else:
+        nodes_set1 = set(subgraph1)
 
-    # 计算Jaccard相似度指数
-    similarity = jaccard_similarity(nodes_set1, nodes_set2)
-    return similarity
+    if isinstance(subgraph2, nx.Graph):
+        nodes_set2 = set(subgraph2.nodes())
+    else:
+        nodes_set2 = set(subgraph2)
+
+    # 计算 Jaccard 相似度
+    intersection = nodes_set1 & nodes_set2
+    union = nodes_set1 | nodes_set2
+    if not union:  # 避免除以零
+        return 0.0
+    return len(intersection) / len(union)
