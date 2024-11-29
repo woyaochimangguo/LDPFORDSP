@@ -13,12 +13,12 @@ from measurements import *
 # 参数设置
 prefix = './datasets/Facebook/facebook/'
 files = ['414.edges', '107.edges', "0.edges", "348.edges", "686.edges", "698.edges", "1684.edges", "1912.edges", "3437.edges", "3980.edges"]
-epsilons = [0.1, 0.5, 1, 2, 3,  5,  8, 10]
+epsilons = [ 0.5,1,1.5,2, 3,  5,  8, 10]
 delta = 1e-9
-repeat = 1 # 每个实验重复次数
+repeat = 10 # 每个实验重复次数
 
 # 创建输出文件夹
-output_dir = "output3"
+output_dir = "output_1"
 os.makedirs(output_dir, exist_ok=True)
 
 all_results = {
@@ -86,7 +86,7 @@ for file in files:
 
             # Ours
             start_time = time.time()
-            dense_subgraph_ldpdsp, density_ldpdsp = ldp_charikar_peeling(G, epsilon)
+            dense_subgraph_ldpdsp, density_ldpdsp = ldp_charikar_peeling_distributed(G, epsilon)
             time_ours_list.append(time.time() - start_time)
             ldp_density_list.append(density_ldpdsp)
 

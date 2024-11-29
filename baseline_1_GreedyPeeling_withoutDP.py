@@ -33,5 +33,7 @@ def charikar_peeling(G):
         # Find the node with the smallest degree
         min_degree_node = min(G.nodes, key=G.degree)
         G.remove_node(min_degree_node)
+        print("现在的节点数与边数是",G)
+        print("现在的密度是",compute_density(G))
 
     return best_subgraph, best_density
