@@ -1,6 +1,4 @@
 import numpy as np
-import networkx as nx
-import random
 import hashlib
 from ReadGraph import *
 from baseline_1_GreedyPeeling_withoutDP import *
@@ -10,17 +8,16 @@ def generate_seed(node_id):
     hash_object = hashlib.md5(str(node_id).encode())
     return int(hash_object.hexdigest(), 16) % (2**32)
 
-def randomized_response_vectorized(values, epsilon):
+def randomized_response_vectorized(values, epsilon, rng):
     """向量化的随机响应机制：对多个二值元素进行随机响应处理"""
     p = np.exp(epsilon) / (1 + np.exp(epsilon))  # 保留概率
-    random_values = np.random.rand(len(values)) < p  # 生成随机掩码
+    random_values = rng.random(len(values)) < p  # 使用指定随机数生成器生成随机掩码
     return np.where(random_values, values, 1 - values)  # 应用随机响应
 
 def add_dp_noise_to_vector(vector, epsilon, seed):
     """对节点的邻接向量进行随机响应加噪"""
-    rng = np.random.default_rng(seed)  # 为该节点创建固定随机数生成器
-    np.random.seed(seed)  # 设置随机种子
-    return randomized_response_vectorized(vector, epsilon)
+    rng = np.random.default_rng(seed)  # 基于种子创建独立的随机数生成器
+    return randomized_response_vectorized(vector, epsilon, rng)
 
 def generate_noisy_graph(g, epsilon):
     """
@@ -38,7 +35,7 @@ def generate_noisy_graph(g, epsilon):
     for i in range(num_nodes):
         neighbors = adj_matrix[i, :]  # 节点 i 的邻接向量
         seed = generate_seed(nodes[i])  # 基于节点 i 生成独立种子
-        noisy_neighbors = randomized_response_vectorized(neighbors, epsilon)  # 对邻接向量加噪
+        noisy_neighbors = add_dp_noise_to_vector(neighbors, epsilon, seed)  # 对邻接向量加噪
         noisy_matrix[i, :] = noisy_neighbors  # 更新噪声矩阵
 
     # 提取下三角部分生成噪声图
@@ -104,6 +101,12 @@ def ldp_greedy_peeling(g, epsilon):
 
     return list(densest_subset)
 
+def ldp_greedy_peeling_withoutestimate(g, epsilon):
+    noisy_G = generate_noisy_graph(g, epsilon)
+    de ,ds = charikar_peeling(noisy_G)
+    return de,ds
+
+
 def validate_subset_density_original(G, subset):
     """
     在原始图中计算子集的真实密度。
@@ -114,23 +117,3 @@ def validate_subset_density_original(G, subset):
     if num_nodes <= 1:
         return 0
     return num_edges / num_nodes
-
-if __name__ == "__main__":
-    prefix = './datasets/Facebook/facebook/'
-    files = ['414.edges', '107.edges', "0.edges", "348.edges", "686.edges", "698.edges", "1684.edges", "1912.edges", "3437.edges", "3980.edges"]
-
-    G = nx.Graph()
-    for file in files:
-        G_ = readFacebook(prefix, file)
-        G = nx.compose(G, G_)
-
-    epsilon =0.5
-    subset = ldp_greedy_peeling(G, epsilon)
-    subset_density_original = validate_subset_density_original(G, subset)
-
-    print("=" * 50)
-    print(f"隐私预算 (epsilon): {epsilon}")
-    print(f"估计子集的节点集合: {subset}")
-    print("估计子集的节点数量:", len(subset))
-    print(f"返回子集在原始图中的真实密度: {subset_density_original:.4f}")
-    print("=" * 50)
