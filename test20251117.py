@@ -8,9 +8,10 @@ import matplotlib.pyplot as plt
 from our_method import *
 from ReadGraph import *
 from Simple_LEDP import *
+from our_algorithm2  import *
 
 # 创建输出文件夹
-output_dir = "facebook_results_oldpassion"
+output_dir = "20251120_3_7"
 os.makedirs(output_dir, exist_ok=True)
 
 # 数据集路径
@@ -18,7 +19,8 @@ prefix = './datasets/Facebook/facebook/'
 files = ['414.edges', '107.edges', "0.edges", "348.edges", "686.edges", "698.edges", "1684.edges", "1912.edges", "3437.edges", "3980.edges"]
 
 # 隐私参数
-epsilons = [0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]
+# epsilons = [0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]
+epsilons = [1,  2, 4, 6, 8, 10]
 delta = 1e-9
 eta = 0.4
 repeat = 1  # 每个实验重复次数
@@ -61,6 +63,13 @@ for epsilon in epsilons:
         baseline3_density = validate_subset_density_original(G_combined, simple_dense_subgraph)
         baseline3_similarity = compare_subgraph_similarity(original_dense_subgraph, simple_dense_subgraph)
 
+        #algorithm2
+        start_time = time.time()
+        algorithm2_dense_subgraph = greedy_algorithm_with_algorithm2(G_combined, epsilon*0.7, epsilon*0.3   )
+        algorithm2_time = time.time() - start_time
+        our_algorithm2_density = validate_subset_density_original(G_combined, algorithm2_dense_subgraph)
+        our_algorithm2_similarity = compare_subgraph_similarity(original_dense_subgraph, algorithm2_dense_subgraph)
+
         # 存储结果
         results.append({
             "epsilon": epsilon,
@@ -74,6 +83,9 @@ for epsilon in epsilons:
             "our_density": our_density,
             "our_similarity": our_similarity,
             "our_time": our_time,
+            "our_algorithm2_density": our_algorithm2_density,
+            "our_algorithm2_similarity": our_algorithm2_similarity,
+            "our_algorithm2_time": algorithm2_time,
         })
 
 # 转换为 DataFrame
@@ -102,6 +114,7 @@ plt.plot(mean_results["epsilon"], mean_results["original_density"], label="Origi
 plt.plot(mean_results["epsilon"], mean_results["baseline2_density"], label="Baseline2 Density (DP)", marker="s")
 plt.plot(mean_results["epsilon"], mean_results["our_density"], label="Our Method Density (LDP)", marker="^")
 plt.plot(mean_results["epsilon"], mean_results["baseline3_density"], label="Simple_LEDP", marker="x")
+plt.plot(mean_results["epsilon"], mean_results["our_algorithm2_density"], label="Our Method Density (LDP with algorithm2)", marker="v")
 plt.xlabel("Privacy Budget (epsilon)")
 plt.ylabel("Density")
 plt.title("Density vs Privacy Budget")
@@ -115,6 +128,7 @@ plt.figure(figsize=(10, 6))
 plt.plot(mean_results["epsilon"], mean_results["baseline2_similarity"], label="Jaccard Similarity (Baseline2 vs Baseline1)", marker="o")
 plt.plot(mean_results["epsilon"], mean_results["our_similarity"], label="Jaccard Similarity (Our Method vs Baseline1)", marker="^")
 plt.plot(mean_results["epsilon"], mean_results["baseline3_similarity"], label="Jaccard Similarity (Baseline3 vs Baseline1)", marker="x")
+plt.plot(mean_results["epsilon"], mean_results["our_algorithm2_similarity"], label="Jaccard Similarity (Our Method with algorithm2 vs Baseline1)", marker="v")
 plt.xlabel("Privacy Budget (epsilon)")
 plt.ylabel("Jaccard Similarity")
 plt.title("Jaccard Similarity vs Privacy Budget")
@@ -129,6 +143,7 @@ plt.plot(mean_results["epsilon"], [baseline1_time] * len(mean_results), label="B
 plt.plot(mean_results["epsilon"], mean_results["baseline2_time"], label="Baseline2 Time", marker="s", color="orange")
 plt.plot(mean_results["epsilon"], mean_results["baseline3_time"], label="Simple_LEDP Time", marker="x", color="blue")
 plt.plot(mean_results["epsilon"], mean_results["our_time"], label="Our Method Time", marker="^", color="green")
+plt.plot(mean_results["epsilon"], mean_results["our_algorithm2_time"], label="Our Method Time with algorithm2", marker="v", color="purple")
 plt.xlabel("Privacy Budget (epsilon)")
 plt.ylabel("Time (seconds)")
 plt.title("Execution Time vs Privacy Budget")

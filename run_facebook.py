@@ -8,9 +8,10 @@ import matplotlib.pyplot as plt
 from our_method import *
 from ReadGraph import *
 from Simple_LEDP import *
+from our_algorithm2 import *
 
 # 创建输出文件夹
-output_dir = "facebook_results"
+output_dir = "facebook_results_oldpassion"
 os.makedirs(output_dir, exist_ok=True)
 
 # 数据集路径
