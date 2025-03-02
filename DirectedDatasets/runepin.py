@@ -22,8 +22,8 @@ def get_random_subgraph(G, num_nodes=200):
 
 # 1. **Load Data**
 file_path = 'soc-Epinions1.txt.gz'
-G_ori = ReadSocEpinions(file_path)  # Read the full graph
-G = get_random_subgraph(G_ori, num_nodes=2000)  # Extract a subgraph
+G = ReadSocEpinions(file_path)  # Read the full graph
+# G = get_random_subgraph(G_ori, num_nodes=2000)  # Extract a subgraph
 
 # 2. **Baseline Calculation**
 start_time_baseline = time.time()
