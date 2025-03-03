@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="592ec8c7-8578-46b9-8bb3-c41d07460665" name="更改" comment="xiugai">
-      <change afterPath="$PROJECT_DIR$/DirectedDatasets/p2p-Gnutella08.txt.gz" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DirectedDatasets/runp2p.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DirectedDatasets/runwiki.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DirectedDatasets/wiki-Vote.txt.gz" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +81,8 @@
     "Python.run_musae_squirrel.executor": "Run",
     "Python.runbitcoin.executor": "Run",
     "Python.runepin.executor": "Run",
+    "Python.runp2p.executor": "Run",
+    "Python.runwiki.executor": "Run",
     "Python.test20251117.executor": "Run",
     "Python.testDirected.executor": "Run",
     "Python.比较偏移与纠偏程度.executor": "Run",
@@ -106,30 +108,7 @@
       <recent name="$PROJECT_DIR$/20241208" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.runp2p">
-    <configuration name="DirectedDSD" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="LDPFORDSP" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DirectedDSD.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.runwiki">
     <configuration name="runbitcoin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LDPFORDSP" />
       <option name="ENV_FILES" value="" />
@@ -199,6 +178,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="runwiki" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="LDPFORDSP" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DirectedDatasets" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DirectedDatasets/runwiki.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testDirected" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="LDPFORDSP" />
       <option name="ENV_FILES" value="" />
@@ -224,11 +226,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.runwiki" />
         <item itemvalue="Python.runp2p" />
         <item itemvalue="Python.runepin" />
         <item itemvalue="Python.runbitcoin" />
         <item itemvalue="Python.testDirected" />
-        <item itemvalue="Python.DirectedDSD" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +254,7 @@
       <workItem from="1732346199274" duration="130118000" />
       <workItem from="1732861157697" duration="10792000" />
       <workItem from="1733031229297" duration="130216000" />
-      <workItem from="1737191790414" duration="51830000" />
+      <workItem from="1737191790414" duration="54209000" />
     </task>
     <servers />
   </component>
@@ -277,6 +279,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/LDPFORDSP$testDirected.coverage" NAME="testDirected 覆盖结果" MODIFIED="1740903843655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LDPFORDSP$runwiki.coverage" NAME="runwiki 覆盖结果" MODIFIED="1740982952360" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DirectedDatasets" />
     <SUITE FILE_PATH="coverage/LDPFORDSP$run_facebook.coverage" NAME="run_facebook 覆盖结果" MODIFIED="1732263122613" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LDPFORDSP$our_algorithm2.coverage" NAME="our_algorithm2 覆盖结果" MODIFIED="1737104055191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LDPFORDSP$baseline_3_LDP.coverage" NAME="baseline_3_LDP 覆盖结果" MODIFIED="1732162809874" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -296,5 +299,6 @@
     <SUITE FILE_PATH="coverage/LDPFORDSP$DirectedDSD.coverage" NAME="DirectedDSD 覆盖结果" MODIFIED="1740635172581" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LDPFORDSP$our_method.coverage" NAME="our_method 覆盖结果" MODIFIED="1732807224547" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/LDPFORDSP$122te.coverage" NAME="122te 覆盖结果" MODIFIED="1733550685609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/LDPFORDSP$runp2p.coverage" NAME="runp2p 覆盖结果" MODIFIED="1740979080113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DirectedDatasets" />
   </component>
 </project>
