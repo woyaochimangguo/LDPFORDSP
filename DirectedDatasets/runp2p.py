@@ -78,7 +78,7 @@ plt.title("Privacy Budget vs. Subgraph Density", fontsize=20, fontweight='bold')
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tick_params(axis='both', which='major', labelsize=14, width=2, length=8)
 plt.legend(prop={'size': 14, 'weight': 'bold'}, frameon=False, loc="best")
-plt.savefig(os.path.join(output_draw_dir, "density_comparison.png"))
+plt.savefig(os.path.join(output_draw_dir, "directed-density_comparison.png"))
 plt.show()
 
 # 6. **Plot Jaccard Similarity Comparison**
@@ -91,7 +91,7 @@ plt.title("Privacy Budget vs. Set Similarity", fontsize=20, fontweight='bold')
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tick_params(axis='both', which='major', labelsize=14, width=2, length=8)
 plt.legend(prop={'size': 14, 'weight': 'bold'}, frameon=False, loc="best")
-plt.savefig(os.path.join(output_draw_dir, "similarity_comparison.png"))
+plt.savefig(os.path.join(output_draw_dir, "directed-similarity_comparison.png"))
 plt.show()
 
 # 7. **Plot Runtime Comparison**
@@ -104,7 +104,7 @@ plt.title("Privacy Budget vs. Runtime", fontsize=20, fontweight='bold')
 plt.grid(True, linestyle='--', alpha=0.6)
 plt.tick_params(axis='both', which='major', labelsize=14, width=2, length=8)
 plt.legend(prop={'size': 14, 'weight': 'bold'}, frameon=False, loc="best")
-plt.savefig(os.path.join(output_draw_dir, "runtime_comparison.png"))
+plt.savefig(os.path.join(output_draw_dir, "directed-runtime_comparison.png"))
 plt.show()
 
 print(f"All charts successfully saved to {output_draw_dir}")
