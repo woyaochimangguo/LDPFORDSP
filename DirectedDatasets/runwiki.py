@@ -12,7 +12,7 @@ plt.rcParams['font.sans-serif'] = ['Arial']
 plt.rcParams['axes.unicode_minus'] = False
 
 # Create output directory
-output_draw_dir = "wikifig_2000"
+output_draw_dir = "wikifig_400_1"
 os.makedirs(output_draw_dir, exist_ok=True)
 
 def get_random_subgraph(G, num_nodes=200):
@@ -23,7 +23,7 @@ def get_random_subgraph(G, num_nodes=200):
 # 1. **Load Data**
 file_path = 'wiki-Vote.txt.gz'  # 替换为新的数据集路径
 G_ = read_edgelist(file_path, create_using=DiGraph(), nodetype=int)  # 使用networkx读取边列表
-G = get_random_subgraph(G_, num_nodes=2000)  # 随机选择一个子图
+G = get_random_subgraph(G_, num_nodes=500)  # 随机选择一个子图
 
 # 2. **Baseline Calculation**
 start_time_baseline = time.time()
@@ -37,7 +37,7 @@ print(f"Baseline densest subgraph density: {max_density_baseline:.4f}")
 print(f"Baseline runtime: {baseline_runtime:.4f} seconds")
 
 # 3. **LDP Calculation for Different ε**
-epsilons = [1,2,3,4,5,6,7,8,9,10]
+epsilons = [1,2,3,4,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52]
 results = []
 
 for epsilon in epsilons:

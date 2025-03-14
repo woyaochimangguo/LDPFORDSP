@@ -12,18 +12,18 @@ plt.rcParams['font.sans-serif'] = ['Arial']
 plt.rcParams['axes.unicode_minus'] = False
 
 # Create output directory
-output_draw_dir = "epininfig"
+output_draw_dir = "epininfig_2000_error"
 os.makedirs(output_draw_dir, exist_ok=True)
 
-def get_random_subgraph(G, num_nodes=200):
+def get_random_subgraph(G, num_nodes=4000):
     """Randomly select a subgraph with the specified number of nodes."""
     selected_nodes = random.sample(list(G.nodes()), num_nodes)
     return G.subgraph(selected_nodes).copy()
 
 # 1. **Load Data**
 file_path = 'soc-Epinions1.txt.gz'
-G = ReadSocEpinions(file_path)  # Read the full graph
-# G = get_random_subgraph(G_ori, num_nodes=2000)  # Extract a subgraph
+G_ori = ReadSocEpinions(file_path)  # Read the full graph
+G = get_random_subgraph(G_ori, num_nodes=2000)  # Extract a subgraph
 
 # 2. **Baseline Calculation**
 start_time_baseline = time.time()
