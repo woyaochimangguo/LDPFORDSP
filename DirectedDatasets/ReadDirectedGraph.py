@@ -36,3 +36,23 @@ def ReadSocEpinions(file_path):
     G = nx.from_pandas_edgelist(df, "source", "target", create_using=nx.DiGraph())
 
     return G
+
+def read_graph(filename):
+    G = nx.DiGraph()  # 创建一个空的有向图
+
+    with open(filename, 'r') as f:
+        for line in f:
+            parts = line.strip().split()
+            if len(parts) != 3:
+                continue  # 跳过格式不正确的行
+            source, target, weight = map(int, parts)
+            # 添加带权重的边到图中
+            G.add_edge(source, target, weight=weight)
+
+    return G
+
+
+def get_random_subgraph(G, num_nodes=200):
+    """Randomly select a subgraph with the specified number of nodes."""
+    selected_nodes = random.sample(list(G.nodes()), num_nodes)
+    return G.subgraph(selected_nodes).copy()
