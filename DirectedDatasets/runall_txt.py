@@ -5,11 +5,11 @@ from ReadDirectedGraph import *
 
 # 数据集路径和输出路径设置
 datasets_dir = '/Users/teco/Documents/GitHub/LDPFORDSP/DirectedDatasets/datasets/'
-output_base_dir = "result_txt"
+output_base_dir = "txt12"
 os.makedirs(output_base_dir, exist_ok=True)
 
 # 隐私预算设置
-epsilons = [1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6]
+epsilons = [1, 2]
 repeat_times = 5
 
 # 遍历datasets目录下的所有txt文件

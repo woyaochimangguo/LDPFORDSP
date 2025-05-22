@@ -1,5 +1,7 @@
 import os
 import time
+import pandas as pd
+import matplotlib.pyplot as plt
 from DirectedGraphBaseline import *
 from ReadDirectedGraph import *
 
@@ -8,13 +10,12 @@ plt.rcParams['font.sans-serif'] = ['Arial']
 plt.rcParams['axes.unicode_minus'] = False
 
 # Create output directory
-output_draw_dir = "airplan_fig"
+output_draw_dir = "rattus_fig"
 os.makedirs(output_draw_dir, exist_ok=True)
 
 # 1. **Load Data**
-file_path = '/Users/teco/Documents/GitHub/LDPFORDSP/DirectedDatasets/datasets/airports.txt'
+file_path = '/Users/teco/Documents/GitHub/LDPFORDSP/DirectedDatasets/datasets/rattus.txt'
 G = read_graph(file_path)  # Read the full graph
-# G = get_random_subgraph(G_ori, num_nodes=2000)  # Extract a subgraph
 
 # 2. **Baseline Calculation**
 start_time_baseline = time.time()
@@ -27,34 +28,44 @@ print("\n===== Baseline Results =====")
 print(f"Baseline densest subgraph density: {max_density_baseline:.4f}")
 print(f"Baseline runtime: {baseline_runtime:.4f} seconds")
 
-# 3. **LDP Calculation for Different ε**
-epsilons = [1, 1.5,2,2.5,3,3.5,4,4.5,5,5.5,6]
+# 3. **LDP Calculation for Different ε with repetition**
+epsilons = [0.1,1,2,3,4,5,6,7,8,9,10]
+repeat_times = 1
 results = []
 
 for epsilon in epsilons:
-    start_time_LDP = time.time()
-    S_LDP, T_LDP = densest_subgraph_LDP(G, epsilon)  # LDP calculation
-    end_time_LDP = time.time()
-    LDP_runtime = end_time_LDP - start_time_LDP
+    densities, sims_S, sims_T, runtimes = [], [], [], []
 
-    # Calculate LDP density on the original graph
-    original_density_LDP = calculate_density(G, S_LDP, T_LDP)
+    for _ in range(repeat_times):
+        start_time_LDP = time.time()
+        S_LDP, T_LDP = densest_subgraph_LDP(G, epsilon)  # LDP calculation
+        end_time_LDP = time.time()
 
-    # Compute Jaccard similarity
-    sim_S = jaccard_similarity(S_LDP, S_baseline)
-    sim_T = jaccard_similarity(T_LDP, T_baseline)
+        # Calculate LDP density on the original graph
+        densities.append(calculate_density(G, S_LDP, T_LDP))
 
-    results.append((epsilon, original_density_LDP, sim_S, sim_T, LDP_runtime))
+        # Compute Jaccard similarity
+        sims_S.append(jaccard_similarity(S_LDP, S_baseline))
+        sims_T.append(jaccard_similarity(T_LDP, T_baseline))
+
+        runtimes.append(end_time_LDP - start_time_LDP)
+
+    avg_density = sum(densities) / repeat_times
+    avg_sim_S = sum(sims_S) / repeat_times
+    avg_sim_T = sum(sims_T) / repeat_times
+    avg_runtime = sum(runtimes) / repeat_times
+
+    results.append((epsilon, avg_density, avg_sim_S, avg_sim_T, avg_runtime))
 
     print(f"\n===== ε = {epsilon} =====")
-    print(f"LDP densest subgraph density: {original_density_LDP:.4f}")
-    print(f"Jaccard similarity of S: {sim_S:.4f}")
-    print(f"Jaccard similarity of T: {sim_T:.4f}")
-    print(f"LDP runtime: {LDP_runtime:.4f} seconds")
+    print(f"Avg LDP densest subgraph density: {avg_density:.4f}")
+    print(f"Avg Jaccard similarity of S: {avg_sim_S:.4f}")
+    print(f"Avg Jaccard similarity of T: {avg_sim_T:.4f}")
+    print(f"Avg LDP runtime: {avg_runtime:.4f} seconds")
 
 # 4. **Save Results to CSV**
 csv_file = os.path.join(output_draw_dir, "results.csv")
-df = pd.DataFrame(results, columns=["Epsilon", "LDP Density", "S Similarity", "T Similarity", "LDP Runtime"])
+df = pd.DataFrame(results, columns=["Epsilon", "Avg LDP Density", "Avg S Similarity", "Avg T Similarity", "Avg LDP Runtime"])
 df["Baseline Density"] = max_density_baseline
 df["Baseline Runtime"] = baseline_runtime
 df.to_csv(csv_file, index=False)

@@ -10,13 +10,13 @@ from ReadGraph import *
 from Simple_LEDP import *
 
 # 创建输出文件夹
-output_dir = "musae_squirrel_results"
+output_dir = "musae_squirrel1248"
 os.makedirs(output_dir, exist_ok=True)
 
 file_pyth = "datasets/wikipedia/squirrel/musae_squirrel_edges.csv"
 
 # 隐私参数
-epsilons = [0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]
+epsilons = [8]
 delta = 1e-9
 eta = 0.4
 repeat = 1  # 每个实验重复次数
@@ -89,43 +89,43 @@ print(mean_results)
 results_df.to_csv(os.path.join(output_dir, "detailed_density_results_with_subgraphs_test.csv"), index=False)
 mean_results.to_csv(os.path.join(output_dir, "density_results_with_similarity_mean_test.csv"), index=False)
 
-# 绘图：密度变化 vs 隐私预算
-plt.figure(figsize=(10, 6))
-plt.plot(mean_results["epsilon"], mean_results["original_density"], label="Original Density (Baseline1)", marker="o")
-plt.plot(mean_results["epsilon"], mean_results["baseline2_density"], label="Baseline2 Density (DP)", marker="s")
-plt.plot(mean_results["epsilon"], mean_results["our_density"], label="Our Method Density (LDP)", marker="^")
-plt.plot(mean_results["epsilon"], mean_results["baseline3_density"], label="Simple_LEDP", marker="x")
-plt.xlabel("Privacy Budget (epsilon)")
-plt.ylabel("Density")
-plt.title("Density vs Privacy Budget")
-plt.legend()
-plt.grid(True)
-plt.savefig(os.path.join(output_dir, "density_vs_privacy_budget_test.png"))
-plt.show()
-
-# 绘图：集合相似度变化 vs 隐私预算
-plt.figure(figsize=(10, 6))
-plt.plot(mean_results["epsilon"], mean_results["baseline2_similarity"], label="Jaccard Similarity (Baseline2 vs Baseline1)", marker="o")
-plt.plot(mean_results["epsilon"], mean_results["our_similarity"], label="Jaccard Similarity (Our Method vs Baseline1)", marker="^")
-plt.plot(mean_results["epsilon"], mean_results["baseline3_similarity"], label="Jaccard Similarity (Baseline3 vs Baseline1)", marker="x")
-plt.xlabel("Privacy Budget (epsilon)")
-plt.ylabel("Jaccard Similarity")
-plt.title("Jaccard Similarity vs Privacy Budget")
-plt.legend()
-plt.grid(True)
-plt.savefig(os.path.join(output_dir, "similarity_vs_privacy_budget_test.png"))
-plt.show()
-
-# 绘图：运行时间变化 vs 隐私预算
-plt.figure(figsize=(10, 6))
-plt.plot(mean_results["epsilon"], [baseline1_time] * len(mean_results), label="Baseline1 Time", linestyle="--", color="red")
-plt.plot(mean_results["epsilon"], mean_results["baseline2_time"], label="Baseline2 Time", marker="s", color="orange")
-plt.plot(mean_results["epsilon"], mean_results["baseline3_time"], label="Simple_LEDP Time", marker="x", color="blue")
-plt.plot(mean_results["epsilon"], mean_results["our_time"], label="Our Method Time", marker="^", color="green")
-plt.xlabel("Privacy Budget (epsilon)")
-plt.ylabel("Time (seconds)")
-plt.title("Execution Time vs Privacy Budget")
-plt.legend()
-plt.grid(True)
-plt.savefig(os.path.join(output_dir, "execution_time_vs_privacy_budget_test.png"))
-plt.show()
+# # 绘图：密度变化 vs 隐私预算
+# plt.figure(figsize=(10, 6))
+# plt.plot(mean_results["epsilon"], mean_results["original_density"], label="Original Density (Baseline1)", marker="o")
+# plt.plot(mean_results["epsilon"], mean_results["baseline2_density"], label="Baseline2 Density (DP)", marker="s")
+# plt.plot(mean_results["epsilon"], mean_results["our_density"], label="Our Method Density (LDP)", marker="^")
+# plt.plot(mean_results["epsilon"], mean_results["baseline3_density"], label="Simple_LEDP", marker="x")
+# plt.xlabel("Privacy Budget (epsilon)")
+# plt.ylabel("Density")
+# plt.title("Density vs Privacy Budget")
+# plt.legend()
+# plt.grid(True)
+# plt.savefig(os.path.join(output_dir, "density_vs_privacy_budget_test.png"))
+# plt.show()
+#
+# # 绘图：集合相似度变化 vs 隐私预算
+# plt.figure(figsize=(10, 6))
+# plt.plot(mean_results["epsilon"], mean_results["baseline2_similarity"], label="Jaccard Similarity (Baseline2 vs Baseline1)", marker="o")
+# plt.plot(mean_results["epsilon"], mean_results["our_similarity"], label="Jaccard Similarity (Our Method vs Baseline1)", marker="^")
+# plt.plot(mean_results["epsilon"], mean_results["baseline3_similarity"], label="Jaccard Similarity (Baseline3 vs Baseline1)", marker="x")
+# plt.xlabel("Privacy Budget (epsilon)")
+# plt.ylabel("Jaccard Similarity")
+# plt.title("Jaccard Similarity vs Privacy Budget")
+# plt.legend()
+# plt.grid(True)
+# plt.savefig(os.path.join(output_dir, "similarity_vs_privacy_budget_test.png"))
+# plt.show()
+#
+# # 绘图：运行时间变化 vs 隐私预算
+# plt.figure(figsize=(10, 6))
+# plt.plot(mean_results["epsilon"], [baseline1_time] * len(mean_results), label="Baseline1 Time", linestyle="--", color="red")
+# plt.plot(mean_results["epsilon"], mean_results["baseline2_time"], label="Baseline2 Time", marker="s", color="orange")
+# plt.plot(mean_results["epsilon"], mean_results["baseline3_time"], label="Simple_LEDP Time", marker="x", color="blue")
+# plt.plot(mean_results["epsilon"], mean_results["our_time"], label="Our Method Time", marker="^", color="green")
+# plt.xlabel("Privacy Budget (epsilon)")
+# plt.ylabel("Time (seconds)")
+# plt.title("Execution Time vs Privacy Budget")
+# plt.legend()
+# plt.grid(True)
+# plt.savefig(os.path.join(output_dir, "execution_time_vs_privacy_budget_test.png"))
+# plt.show()

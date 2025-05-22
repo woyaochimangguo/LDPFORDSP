@@ -14,7 +14,7 @@ file_paths = {
 }
 
 # 创建输出文件夹
-output_draw_dir = "outputdraw_6"
+output_draw_dir = "outputdraw_final"
 os.makedirs(output_draw_dir, exist_ok=True)
 
 # 初始化图表 (两行三列布局)

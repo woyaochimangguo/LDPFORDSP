@@ -11,7 +11,7 @@ from Simple_LEDP import *
 from our_algorithm2 import *
 
 # 创建输出文件夹
-output_dir = "facebook_results_oldpassion"
+output_dir = "facebook1248_2"
 os.makedirs(output_dir, exist_ok=True)
 
 # 数据集路径
@@ -19,10 +19,10 @@ prefix = './datasets/Facebook/facebook/'
 files = ['414.edges', '107.edges', "0.edges", "348.edges", "686.edges", "698.edges", "1684.edges", "1912.edges", "3437.edges", "3980.edges"]
 
 # 隐私参数
-epsilons = [0.1, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4]
+epsilons = [1,2]
 delta = 1e-9
 eta = 0.4
-repeat = 1  # 每个实验重复次数
+repeat = 5  # 每个实验重复次数
 
 # 合并所有子图
 # G_combined = readFacebook(prefix, files[0])
